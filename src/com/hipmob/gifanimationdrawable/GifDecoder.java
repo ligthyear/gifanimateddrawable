@@ -518,6 +518,7 @@ public class GifDecoder
 					}
 					transparency = (packed & 1) != 0;
 					delay = readShort() * 10; // delay in milliseconds
+					if (delay == 0) delay = 100;
 					transIndex = read(); // transparent color index
 					read(); // block terminator
 	}
